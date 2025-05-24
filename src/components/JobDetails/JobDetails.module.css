@@ -1,0 +1,128 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.closeButton {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  z-index: 1;
+}
+
+.content {
+  padding: 32px;
+}
+
+.mainInfo {
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 24px;
+  color: #333;
+  margin: 0 0 16px 0;
+}
+
+.salary {
+  font-size: 20px;
+  color: #28a745;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.location {
+  color: #666;
+  margin: 8px 0;
+}
+
+.date {
+  color: #999;
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.section {
+  margin: 24px 0;
+  padding-top: 24px;
+  border-top: 1px solid #eee;
+}
+
+.section h3 {
+  color: #333;
+  margin: 0 0 16px 0;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact span {
+  font-weight: 500;
+}
+
+.contact a {
+  color: #646cff;
+  text-decoration: none;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.applyButton,
+.favoriteButton {
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.applyButton {
+  background-color: #28a745;
+  color: white;
+  border: none;
+}
+
+.applyButton:hover {
+  background-color: #218838;
+}
+
+.favoriteButton {
+  background-color: white;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.favoriteButton:hover {
+  background-color: #f8f9fa;
+  border-color: #ccc;
+}
