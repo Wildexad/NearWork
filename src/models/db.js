@@ -30,7 +30,7 @@ export class UserModel {
       first_name: firstName,
       last_name: lastName,
       avatar_url: avatarUrl,
-      role: 'user',
+      role: users.length === 0 ? 'admin' : 'user',
       created_at: new Date().toISOString()
     };
 

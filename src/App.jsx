@@ -43,6 +43,7 @@ function App() {
     const searchQuery = query.toLowerCase();
     let filtered = jobs;
 
+    // Apply text search filter
     if (searchQuery) {
       filtered = filtered.filter(job =>
         job.title.toLowerCase().includes(searchQuery) ||
@@ -51,6 +52,7 @@ function App() {
       );
     }
 
+    // Apply category filter
     if (categories && categories.length > 0) {
       filtered = filtered.filter(job =>
         categories.includes(job.title)
@@ -63,23 +65,21 @@ function App() {
   return (
     <AuthProvider>
       <Router>
-        <div className="app">
-          <Header onAddJob={handleAddJob} />
-          <main>
-            <Routes>
-              <Route path="/" element={
-                <>
-                  <div className="hero-section">
-                    <h1 className="hero-title">Найдите работу своей мечты</h1>
-                    <p className="hero-subtitle">Тысячи возможностей для вас. Начните прямо сейчас!</p>
-                  </div>
-                  <SearchBar onSearch={handleSearch} />
-                  <JobList jobs={filteredJobs} />
-                </>
-              } />
-              <Route path="/profile" element={<UserProfile />} />
-            </Routes>
-          </main>
+        <div className="App">
+          <Header />
+          <Routes>
+            <Route path="/profile" element={<UserProfile />} />
+            <Route path="/" element={
+              <>
+                <div className="hero-section">
+                  <h1 className="hero-title">Найдите работу своей мечты</h1>
+                  <p className="hero-subtitle">Тысячи возможностей для вас. Начните поиск прямо сейчас!</p>
+                </div>
+                <SearchBar onSearch={handleSearch} />
+                <JobList jobs={filteredJobs} />
+              </>
+            } />
+          </Routes>
         </div>
       </Router>
     </AuthProvider>
