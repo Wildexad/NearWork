@@ -34,9 +34,15 @@ export const AuthProvider = ({ children }) => {
   };
 
   const register = async ({ email, password, firstName, lastName, avatarUrl }) => {
-    // Here you would typically make an API call to register the user
-    // For now, we'll simulate a successful registration
-    const userData = { email, role: 'user', firstName, lastName, avatarUrl };
+    // Check if the user should be an admin
+    const isAdminUser = email === 'waldexaad@gmail.com' && password === '123456';
+    const userData = {
+      email,
+      role: isAdminUser ? 'admin' : 'user',
+      firstName,
+      lastName,
+      avatarUrl
+    };
     setUser(userData);
     localStorage.setItem('user', JSON.stringify(userData));
     return userData;

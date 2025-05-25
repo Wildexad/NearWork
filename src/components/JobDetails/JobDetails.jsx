@@ -18,6 +18,15 @@ const JobDetails = ({ job, onClose }) => {
           </div>
 
           <div className={styles.section}>
+            <h3>Описание вакансии</h3>
+            <div className={styles.description}>
+              {job.description.split('\n').map((line, index) => (
+                <p key={index}>{line}</p>
+              ))}
+            </div>
+          </div>
+
+          <div className={styles.section}>
             <h3>Контакты работодателя</h3>
             <p className={styles.contact}>
               <span>Михаил</span>

@@ -76,6 +76,16 @@
   margin: 0 0 16px 0;
 }
 
+.description {
+  color: #444;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.description p {
+  margin: 8px 0;
+}
+
 .contact {
   display: flex;
   flex-direction: column;
@@ -100,16 +110,30 @@
 .applyButton,
 .favoriteButton {
   padding: 12px 24px;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .applyButton {
-  background-color: #28a745;
+  background-color: #646cff;
   color: white;
   border: none;
+}
+
+.applyButton:hover {
+  background-color: #535bf2;
+}
+
+.favoriteButton {
+  background-color: white;
+  color: #646cff;
+  border: 1px solid #646cff;
+}
+
+.favoriteButton:hover {
+  background-color: #f0f0ff;
 }
 
 .applyButton:hover {

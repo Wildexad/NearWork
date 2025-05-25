@@ -9,7 +9,7 @@
 .hero-section {
   padding: 4rem 2rem;
   background: linear-gradient(135deg, #646cff 0%, #5258cc 100%);
-  margin: 0 0 3rem 0;
+  margin: 0px 0 3rem 0;
   box-shadow: 0 10px 30px rgba(100, 108, 255, 0.2);
   position: relative;
   overflow: hidden;
