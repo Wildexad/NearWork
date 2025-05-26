@@ -6,6 +6,9 @@ const AddJobForm = ({ onClose, onSubmit }) => {
     title: '',
     salary: '',
     location: '',
+    description: '',
+    contactName: '',
+    contactPhone: ''
   });
 
   const handleChange = (e) => {
@@ -18,9 +21,11 @@ const AddJobForm = ({ onClose, onSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     onSubmit({
       ...jobData,
-      id: Date.now(), // Simple way to generate unique IDs
+      description: jobData.description,
+      id: Date.now(),
       date: new Date().toLocaleDateString('ru-RU')
     });
     onClose();
@@ -29,9 +34,7 @@ const AddJobForm = ({ onClose, onSubmit }) => {
   return (
     <div className={styles.overlay}>
       <div className={styles.modal}>
-        <button className={styles.closeButton} onClick={onClose}>
-          ×
-        </button>
+        <button className={styles.closeButton} onClick={onClose}>×</button>
         <h2>Добавить вакансию</h2>
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.inputGroup}>
@@ -68,6 +71,43 @@ const AddJobForm = ({ onClose, onSubmit }) => {
               required
             />
           </div>
+          <div className={styles.inputGroup}>
+            <label htmlFor="description">Описание вакансии:</label>
+            <textarea
+              id="description"
+              name="description"
+              value={jobData.description}
+              onChange={handleChange}
+              required
+              rows="4"
+            />
+          </div>
+
+          <div className={styles.inputGroup}>
+            <label htmlFor="contactName">Контактное лицо:</label>
+            <input
+              type="text"
+              id="contactName"
+              name="contactName"
+              value={jobData.contactName}
+              onChange={handleChange}
+              required
+              placeholder="например: Михаил"
+            />
+          </div>
+          <div className={styles.inputGroup}>
+            <label htmlFor="contactPhone">Контактный телефон:</label>
+            <input
+              type="tel"
+              id="contactPhone"
+              name="contactPhone"
+              value={jobData.contactPhone}
+              onChange={handleChange}
+              required
+              placeholder="например: 8 901 122-23-34"
+            />
+          </div>
+
           <button type="submit" className={styles.submitButton}>
             Добавить
           </button>

@@ -20,23 +20,16 @@ const JobDetails = ({ job, onClose }) => {
           <div className={styles.section}>
             <h3>Описание вакансии</h3>
             <div className={styles.description}>
-              {job.description.split('\n').map((line, index) => (
-                <p key={index}>{line}</p>
-              ))}
+              <p>{job.description}</p>
             </div>
           </div>
 
           <div className={styles.section}>
             <h3>Контакты работодателя</h3>
             <p className={styles.contact}>
-              <span>Михаил</span>
-              <a href={`tel:89011222334`}>8 901 122-23-34</a>
+              <span>{job.contactName}</span>
+              <a href={`tel:${job.contactPhone}`}>{job.contactPhone}</a>
             </p>
-          </div>
-
-          <div className={styles.section}>
-            <h3>Категория</h3>
-            <p>Курьерская доставка</p>
           </div>
 
           <div className={styles.actions}>
