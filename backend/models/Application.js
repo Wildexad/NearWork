@@ -20,7 +20,7 @@ const Application = sequelize.define('Application', {
   user_id: {
     type: DataTypes.INTEGER,
     references: {
-      model: 'Users',
+      model: 'users',
       key: 'id'
     },
     allowNull: false
@@ -28,7 +28,7 @@ const Application = sequelize.define('Application', {
   job_id: {
     type: DataTypes.INTEGER,
     references: {
-      model: 'Jobs',
+      model: 'jobs',
       key: 'id'
     },
     allowNull: false

@@ -16,7 +16,18 @@ Application.belongsTo(Job, { foreignKey: 'job_id', as: 'job' });
 // Sync all models with database
 async function syncDatabase() {
   try {
-    await sequelize.sync({ alter: true });
+    // First, sync the User model
+    await User.sync({ alter: true });
+    console.log('User model synchronized successfully.');
+
+    // Then sync the Job model
+    await Job.sync({ alter: true });
+    console.log('Job model synchronized successfully.');
+
+    // Finally sync the Application model
+    await Application.sync({ alter: true });
+    console.log('Application model synchronized successfully.');
+
     console.log('All models were synchronized successfully.');
   } catch (error) {
     console.error('Error synchronizing models:', error);
